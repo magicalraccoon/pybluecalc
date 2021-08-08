@@ -127,3 +127,16 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+## --- ##
+
+#more venv
+bin/
+cache.db
+include/
+lib64
+pyvenv.cfg
+share/
+
+# hidden
+User_Data_*\.json
