@@ -1,7 +1,7 @@
 import eve_simple_esi as esi
 import sys
 
-print("starting test")
+print("Test: Beginning")
 
 user_client = str(sys.argv[1])
 user_secret = str(sys.argv[2])
@@ -18,10 +18,10 @@ settings={
 
 ESI=esi.ESI(settings)
 
-ESI.gui_auth()
+#ESI.gui_auth()
 
 print("Client ID: ", user_client)
 print("Secret ID: ", user_secret)
 
 
-print("Test!")
+print("Test: Completed")
