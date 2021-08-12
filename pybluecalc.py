@@ -36,8 +36,10 @@ print("Secret ID: ", user_secret)
 #  691,8,20172,2  # copy/invention?
 #  691,8,20424,2  # copy/invention?
 #
-# activityID 1; 
+# activityID: https://www.fuzzwork.co.uk/dump/latest/ramActivities.csv
 # https://stackoverflow.com/questions/16283799/how-to-read-a-csv-file-from-a-url-with-python
+# materialTypeID: May need to be hardcoded
+
 print("Printing rifter materials \n")
 import csv, urllib.request
 
