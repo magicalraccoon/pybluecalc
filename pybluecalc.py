@@ -18,10 +18,39 @@ settings={
 
 ESI=esi.ESI(settings)
 
-#ESI.gui_auth()
+# TODO: check to see if a User_Data_*.json file exists already
+# 	If not, run the initial GUI Authentication window
+# ESI.gui_auth()
 
 print("Client ID: ", user_client)
 print("Secret ID: ", user_secret)
 
+####
+# TODO: print all manufacturing info for a Rifter:
+# https://www.fuzzwork.co.uk/dump/latest/industryActivityMaterials.csv
+#  typeID,activityID,materialTypeID,quantity
+#  691,1,34,32000 # Tritanium
+#  691,1,35,6000  # Pyerite
+#  691,1,36,2500  # Mexallon
+#  691,1,37,500   # Isogen
+#  691,8,20172,2  # copy/invention?
+#  691,8,20424,2  # copy/invention?
+#
+# activityID 1; 
+# https://stackoverflow.com/questions/16283799/how-to-read-a-csv-file-from-a-url-with-python
+print("Printing rifter materials \n")
+import csv, urllib.request
+
+bill_of_materials = []
+url = 'https://www.fuzzwork.co.uk/dump/latest/industryActivityMaterials.csv'
+response = urllib.request.urlopen(url)
+lines = [l.decode('utf-8') for l in response.readlines()]
+for line in lines:
+    if line.startswith('691'):
+        bill_of_materials.append(line.strip())
+csv_lookup = csv.reader(bill_of_materials)
+for item in csv_lookup:
+    print(item)
+####
 
 print("Test: Completed")
